@@ -1,0 +1,90 @@
+<h1>Comparaison entre Observable, Subject et BehaviorSubject</h1>
+
+<section id="ex1">
+  <h2>Observable</h2>
+  <p>
+    On crée un Observable qui publie des entiers à partie de 0 en les incrémentant toutes les demi-secondes. On a des boutons pour s'y abonner. L'observable termine au bout de 5,1 secondes.
+    On constate qu'à chaque abonnement un nouvel observable est crée car les valeurs renvoyées par l'observable recommence à chaque abonnement.
+    <table>
+      <tbody>
+        <tr>
+          <td><button>Abonner</button></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><button>Abonner</button></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><button>Abonner</button></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><button>Abonner</button></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </p>
+</section>
+
+<hr/>
+<section id="ex2">
+  <h2>Subject (publie <label></label>)</h2>
+  <pre>Rechargez la page si le compteur a terminé...</pre>
+  <p>
+    On crée un Subject qui publie des entiers à partie de 0 en les incrémentant toutes les deux secondes. On a des boutons pour s'y abonner. Le Subject termine lorsqu'il atteint 30.
+    On constate qu'à chaque abonnement, tous les observateurs reçoivent la même valeur. Par ailleurs, lorsqu'on s'abonne, rien ne s'affiche tant que le Subject ne publie pas de nouvelle valeur.
+    <table>
+      <tbody>
+        <tr>
+          <td><button>Abonner</button></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><button>Abonner</button></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><button>Abonner</button></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><button>Abonner</button></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </p>
+</section>
+
+<hr/>
+<section id="ex3">
+  <h2>BehaviorSubject (publie <label></label>)</h2>
+  <pre>Rechargez la page si le compteur a terminé...</pre>
+  <p>
+    On crée un Subject qui publie des entiers à partie de 30 en les décrémentant toutes les deux secondes. On a des boutons pour s'y abonner. Le Subject termine lorsqu'il atteint 0.
+    On constate qu'à chaque abonnement, tous les observateurs reçoivent la même valeur. Par ailleurs, lorsqu'on s'abonne, on reçoit tout de suite la valeur courante de bs3, ainsi la valeur est affichée tout de suite, contrairement à ce qui se produisait pour le Subject.
+    <table>
+      <tbody>
+        <tr>
+          <td><button>Abonner</button></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><button>Abonner</button></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><button>Abonner</button></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><button>Abonner</button></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </p>
+</section>
+
